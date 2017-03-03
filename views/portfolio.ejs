@@ -1,0 +1,31 @@
+<% include _header %>
+
+<div class="header">
+  <% if (user.profile_pic_path) {%>
+    <img src="<%= user.profile_pic_path %>" height="80px" width="80px">
+  <% } %>
+  <h1><%= user.displayName() %>'s portfolio</h1>
+  <h2>A list of all the works by <%= user.displayName() %></h2>
+</div>
+
+<div class="content">
+  <% for (var i = 0; i < user.works.length ; i++) {%>
+    <div class= "pure-u-1">
+      <h3><%= user.works[i].title %></h3>
+      <% if (user.works[i].details) { %>
+        <dd><%= user.works[i].details %></dd>
+      <% } %>
+      <% if (user.works[i].type == "Link") {%>
+        <h4><a href = "<%= user.works[i].link %>"><%= user.works[i].link %></a></h4>
+      <% } else if (user.works[i].type == "Screenshot") { %>
+          <% for (var j = 0 ; j < user.works[i].screenshot_paths.length ; j++) { %>
+            <img class = "pure-u-11-24" src = "<%= user.works[i].screenshot_paths[j] %>" ></img>
+          <% } %>
+        <% }%>
+
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<% include _footer %>

@@ -19,6 +19,8 @@ setUpPassport();
 
 app.set("port", process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, "")));
+app.use('/portfolio', express.static(path.join(__dirname, "")));
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 

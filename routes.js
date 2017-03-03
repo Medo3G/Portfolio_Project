@@ -74,7 +74,6 @@ router.get("/list",function(req,res,next){
     if (err){
       return next(err);
     }
-    //res.send(portfolios)
     res.render("list", {
       portfolios: portfolios.docs,
       pageCount: pageCount,
@@ -83,6 +82,22 @@ router.get("/list",function(req,res,next){
     });
   });
 });
+
+router.get("/portfolio/:username", function(req, res, next) {
+  User.findOne({ username: req.params.username }, function(err, user) {
+    if (err) { return next(err); }
+    if (!user) {
+      req.flash("error","User does not exist");
+      res.redirect('/');
+    }
+    if (user.works.length == 0){
+      req.flash("error","User does not have any works");
+      res.redirect('/');
+    }
+    res.render("portfolio", { user: user });
+  });
+});
+
 
 router.get("/logout", function(req, res) {
   req.logout();

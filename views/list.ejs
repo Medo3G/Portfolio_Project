@@ -11,7 +11,7 @@
       <% if (portfolio.profile_pic_path) {%>
         <img src="<%= portfolio.profile_pic_path %>" height="80px" width="80px">
       <% } %>
-      <span style="font-size: x-large"><%= portfolio.displayName() %></span>
+      <a style="font-size: x-large" href= "/portfolio/<%= portfolio.username %> "><%= portfolio.displayName() %></a>
       </div>
       <% for (var i = 0; i < portfolio.works.length && i < 2 ; i++) {%>
         <div class= "pure-u-11-24">
