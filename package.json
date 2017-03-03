@@ -4,7 +4,8 @@
   "description": "mini_project",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "nodemon app.js",
   },
   "author": "mohamed_mohy",
   "license": "ISC",
