@@ -1,0 +1,25 @@
+<% include _header %>
+
+  <div class="header">
+    <h1>Login</h1>
+    <h2>Log in to use your account.</h2>
+  </div>
+  <div class="content">
+    <form class="pure-form pure-form-aligned" action="/login" method="post">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="Username" required>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Password" required>
+        </div>
+
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary">Login</button>
+        </div>
+      </fieldset>
+</form>
+<% include _footer %>

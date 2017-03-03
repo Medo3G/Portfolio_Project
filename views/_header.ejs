@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio_Project</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+          <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+      <![endif]-->
+      <!--[if gt IE 8]><!-->
+          <link rel="stylesheet" href="css/layouts/side-menu.css">
+      <!--<![endif]-->
+      <link rel="stylesheet" href="css/layouts/pure-extras.css">
+      <link rel="stylesheet" href="css/layouts/more-css.css">
+
+    </head>
+<body>
+  <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+          <!-- Hamburger icon -->
+          <span></span>
+      </a>
+  <div id="menu">
+  <div class="pure-menu">
+    <a class="pure-menu-heading" href="/" class="pure-menu-link">Mini_Project</a></li>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a href="/list" class="pure-menu-link">Portfolios</a></li>
+      <% if (currentUser) { %>
+      <li class="pure-menu-item"><a href="/editinfo" class="pure-menu-link">Edit Info</a></li>
+      <li class="pure-menu-item"><a href="/addworks" class="pure-menu-link">Add Works</a></li>
+      <li class="pure-menu-item"><a href="/logout" class="pure-menu-link">Log out</a></li>
+      <li class="pure-menu-item"><div style = "padding: 0.625em 1em"><img style= "margin-right:10px"src="<%= currentUser.profile_pic_path %>" height="25px" width="25px"><%= currentUser.displayName() %></div></li>
+      <% } else { %>
+        <li class="pure-menu-item"><a href="/login" class="pure-menu-link">Log in</a></li>
+        <li class="pure-menu-item"><a href="/register" class="pure-menu-link">Register</a></li>
+        <% } %>
+    </ul>
+  </div>
+
+</div>
+<div id="main">
+  <% errors.forEach(function(error) { %>
+    <div class="pure-alert pure-alert-error" role="alert">
+      <%= error %>
+    </div>
+    <% }) %>
+    <% warnings.forEach(function(warning) { %>
+      <div class="pure-alert pure-alert-warning" role="alert">
+        <%= warning %>
+      </div>
+      <% }) %>
+    <% infos.forEach(function(info) { %>
+      <div class="pure-alert pure-alert-success" role="alert">
+        <%= info %>
+      </div>
+      <% }) %>

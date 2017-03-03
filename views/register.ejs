@@ -1,0 +1,46 @@
+<% include _header %>
+
+  <div class="header">
+    <h1>Register</h1>
+    <h2>Create an account.</h2>
+  </div>
+  <div class="content">
+    <form class="pure-form pure-form-aligned" action="/register" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Name">
+        </div>
+
+        <div class="pure-control-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="Username" required>
+          <span class="pure-form-message-inline">This is a required field.</span>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Password" required>
+          <span class="pure-form-message-inline">This is a required field.</span>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="profile_pic">Profile Picture</label>
+          <input id="profile_pic" name="profile_pic" type="file">
+          <span class="pure-form-message-inline">Size must not exceed 1MB and be of the JPG format.</span>
+        </div>
+
+
+      <div class="pure-controls">
+          <label for="option-one" class="pure-radio">
+            <input id="option-one" type="radio" name="optionsRadios" value="option1" checked>Student</label>
+          <label for="option-two" class="pure-radio">
+            <input id="option-two" type="radio" name="optionsRadios" value="option2" disabled>Client</label>
+        </div>
+
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary">Register</button>
+        </div>
+      </fieldset>
+    </form></div>
+  <% include _footer %>

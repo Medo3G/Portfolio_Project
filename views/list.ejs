@@ -1,0 +1,44 @@
+<% include _header %>
+
+<div class="header">
+  <h1>Portfolio List</h1>
+  <h2>A list of all the portfolios available</h2>
+</div>
+<div class="content">
+  <% portfolios.forEach(function(portfolio) { %>
+    <div style= "background: #eee;margin-bottom:10px;padding-bottom:10px;border-radius:5px">
+      <div style= "background: #ccc; padding: 3px">
+      <% if (portfolio.profile_pic_path) {%>
+        <img src="<%= portfolio.profile_pic_path %>" height="80px" width="80px">
+      <% } %>
+      <span style="font-size: x-large"><%= portfolio.displayName() %></span>
+      </div>
+      <% for (var i = 0; i < portfolio.works.length && i < 2 ; i++) {%>
+        <div class= "pure-u-11-24">
+          <h3><%= portfolio.works[i].title %></h3>
+          <% if (portfolio.works[i].details) { %>
+            <dd><%= portfolio.works[i].details %></dd>
+          <% } %>
+          <% if (portfolio.works[i].type == "Link") {%>
+            <h4><a href = "<%= portfolio.works[i].link %>"><%= portfolio.works[i].link %></a></h4>
+          <% } else if (portfolio.works[i].type == "Screenshot") { %>
+              <% for (var j = 0 ; j < portfolio.works[i].screenshot_paths.length ; j++) { %>
+                <img class = "pure-u-11-24" src = "<%= portfolio.works[i].screenshot_paths[j] %>" ></img>
+              <% } %>
+            <% }%>
+
+          </div>
+        <% } %>
+      </div>
+    <% }); %>
+    <div style="position: absolute; left: 50%; transform: translate(-50%, 0); margin:20px">
+  <% for(var i = 0; i < pages.length; i++) { %>
+  <% var page = pages[i]; %>
+  <% if (page.number != 0) { %>
+    <a href="<%= page.url %>" class="button-xsmall pure-button"><%= page.number %></a>
+  <% }%>
+  <% }%>
+</div>
+</div>
+
+<% include _footer %>

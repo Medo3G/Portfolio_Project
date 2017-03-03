@@ -1,0 +1,70 @@
+<% include _header %>
+
+<div class="header">
+  <h1>Add Works</h1>
+  <h2>Add works to your portfolio.</h2>
+</div>
+<div class="content">
+  <h2 class="content-subhead">Add Link Work</h2>
+  <form class="pure-form pure-form-aligned" action="/addworklink" method="post">
+    <fieldset>
+      <div class="pure-control-group">
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" placeholder="The title of your work" required>
+        <span class="pure-form-message-inline">This is a required field.</span>
+
+      </div>
+
+      <div class="pure-control-group">
+        <label for="details">Details</label>
+        <textarea id="details" name="details" type="text" placeholder="Details about your work"></textarea>
+      </div>
+
+      <div class="pure-control-group">
+        <label for="link">Link</label>
+        <input id="link" name="link" type="text" placeholder="Link to your work" required>
+        <span class="pure-form-message-inline">This is a required field.</span>
+
+      </div>
+      <div class="pure-controls">
+        <button type="submit" class="pure-button pure-button-primary">Add Work</button>
+      </div>
+    </fieldset>
+  </form>
+  <div class="header">
+</div>
+
+<h2 class="content-subhead">Add Screenshot Work</h2>
+  <form class="pure-form pure-form-aligned" action="/addworkscreenshots" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <div class="pure-control-group">
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" placeholder="The title of your work"required>
+        <span class="pure-form-message-inline">This is a required field.</span>
+
+      </div>
+
+      <div class="pure-control-group">
+        <label for="details">Details</label>
+        <textarea id="details" name="details" type="text" placeholder="Details about your work"></textarea>
+      </div>
+
+      <div class="pure-control-group">
+        <label for="Screenshots">Screenshots of your work</label>
+        <span class="pure-form-message-inline">Size of each image must not exceed 1MB and be of the JPG format.</span>
+        <input id="screenshot1" name="screenshot" type="file">
+        <input id="screenshot2" name="screenshot" type="file">
+        <input id="screenshot3" name="screenshot" type="file">
+        <input id="screenshot4" name="screenshot" type="file">
+        <span class="pure-form-message-inline">You need to upload at least one screenshot.</span>
+
+
+      </div>
+      <div class="pure-controls">
+        <button type="submit" class="pure-button pure-button-primary">Add Work</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<% include _footer %>

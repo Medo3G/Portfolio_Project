@@ -1,0 +1,34 @@
+<% include _header %>
+
+<div class="header">
+  <h1>Edit Info</h1>
+  <h2>Edit your personal info.</h2>
+</div>
+
+<div class="content">
+  <form class="pure-form pure-form-aligned" action="/editinfo" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <div class="pure-control-group">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Name" value = "<%= currentUser.name %>">
+        <span class="pure-form-message-inline">If you don't add your name, your username will appear in your portfolio instead.</span>
+      </div>
+      <div class="pure-control-group">
+        <label for="profile_pic">Profile Picture</label>
+
+        <% if (currentUser.profile_pic_path) {%>
+            <img src="<%= currentUser.profile_pic_path %>" height=80px width=80px>
+          <% } else { %>
+            <span class="pure-form-message-inline">No image uploaded.</span>
+          <% } %>
+          <input id="profile_pic" name="profile_pic" type="file">
+        <span class="pure-form-message-inline">Size must not exceed 1MB and be of the JPG format.</span>
+      </div>
+      <div class="pure-controls">
+        <button type="submit" class="pure-button pure-button-primary">Update Info</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<% include _footer %>
