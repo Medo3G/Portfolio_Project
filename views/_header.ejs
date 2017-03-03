@@ -30,7 +30,7 @@
       <li class="pure-menu-item"><a href="/editinfo" class="pure-menu-link">Edit Info</a></li>
       <li class="pure-menu-item"><a href="/addworks" class="pure-menu-link">Add Works</a></li>
       <li class="pure-menu-item"><a href="/logout" class="pure-menu-link">Log out</a></li>
-      <li class="pure-menu-item"><div style = "padding: 0.625em 1em"><img style= "margin-right:10px"src="<%= currentUser.profile_pic_path %>" height="25px" width="25px"><%= currentUser.displayName() %></div></li>
+      <li class="pure-menu-item"><div style = "padding: 0.625em 1em"><img style= "margin-right:10px"src="<%= currentUser.profile_pic_path %>" height="25px" width="25px"><a href="/portfolio/<%= currentUser.displayName() %>" class="pure-menu-link"><%= currentUser.displayName() %></a></div></li>
       <% } else { %>
         <li class="pure-menu-item"><a href="/login" class="pure-menu-link">Log in</a></li>
         <li class="pure-menu-item"><a href="/register" class="pure-menu-link">Register</a></li>
