@@ -88,11 +88,11 @@ router.get("/portfolio/:username", function(req, res, next) {
     if (err) { return next(err); }
     if (!user) {
       req.flash("error","User does not exist");
-      res.redirect('/');
+      return res.redirect('/');
     }
     if (user.works.length == 0){
       req.flash("error","User does not have any works");
-      res.redirect('/');
+      return res.redirect('/');
     }
     res.render("portfolio", { user: user });
   });
