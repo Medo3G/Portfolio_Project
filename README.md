@@ -1,7 +1,9 @@
 # Portfolio_Project
-###CSEN603 Mini project
+### CSEN603 Mini project
 A website that allows users to create their own work portfolios and view the portfolios of others.
 Includes a basic account system, image uploads, and a directory for portfolios.
+
+## [Live Website](http://34.208.95.62:3000/)
 
 #### How to run
 Create the following directories in the root of the folder
